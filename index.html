@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500&family=Dancing+Script:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=EB+Garamond:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="disc-icon" >
 
     <style>
         /* --- CONFIG & VARIABLES --- */
@@ -22,8 +21,6 @@
             --light-gold: #F4E8C1;
             --bg-dark: #0A0A0A;
             --bg-overlay: rgba(0, 0, 0, 0.85);
-            --accent-purple: #8B5CF6;
-            --accent-pink: #EC4899;
         }
 
         body {
@@ -190,35 +187,12 @@
         }
 
         /* --- TYPOGRAPHY --- */
-        .font-wedding { 
-            font-family: 'Great Vibes', cursive;
-            font-weight: 400;
-        }
-        
-        .font-title { 
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        
-        .font-serif { 
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-        }
-        
-        .font-luxury { 
-            font-family: 'Great Vibes', cursive;
-        }
-        
-        .font-body { 
-            font-family: 'Raleway', sans-serif;
-            font-weight: 300;
-        }
-        
-        .font-heading { 
-            font-family: 'EB Garamond', serif;
-            font-weight: 500;
-        }
+        .font-wedding { font-family: 'Great Vibes', cursive; font-weight: 400; }
+        .font-title { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: 1px; }
+        .font-serif { font-family: 'Playfair Display', serif; font-style: italic; }
+        .font-luxury { font-family: 'Great Vibes', cursive; }
+        .font-body { font-family: 'Raleway', sans-serif; font-weight: 300; }
+        .font-heading { font-family: 'EB Garamond', serif; font-weight: 500; }
 
         /* --- PARALLAX BACKGROUNDS --- */
         .parallax-bg {
@@ -451,6 +425,42 @@
                 justify-content: center;
             }
         }
+        
+        /* Iframe Container Style */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Elegant Corner Decorations */
+        .corner-decor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            pointer-events: none;
+            z-index: 10;
+        }
+        .top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+        .top-right { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+        .bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+        .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
     </style>
 </head>
 <body id="main-body" class="bg-[#0A0A0A] gold-pattern-bg">
@@ -479,7 +489,7 @@
             
             <!-- Header Undangan -->
             <h3 class="text-[#F4E8C1] tracking-[0.6em] uppercase text-xs md:text-sm mb-6 font-light font-body opacity-80" data-aos="fade-down">
-                The Wedding Of
+                The Wedding
             </h3>
             
             <h1 class="font-title text-4xl md:text-6xl text-white mb-8 leading-tight text-center" data-aos="zoom-in">
@@ -562,7 +572,6 @@
 
             <div class="container mx-auto max-w-6xl relative z-10">
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <!-- Image bismillah, saya gunakan placeholder karena URL sebelumnya tidak valid -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Basmala.svg" class="h-16 mx-auto mb-8 opacity-90 invert" alt="Bismillah" style="filter: invert(1) sepia(1) saturate(2) hue-rotate(310deg);">
                     
                     <p class="font-serif italic text-gray-300 max-w-2xl mx-auto leading-relaxed text-lg">
@@ -576,7 +585,7 @@
                     <!-- Bride -->
                     <div class="glass-dark p-8 rounded-2xl text-center relative group card-hover" data-aos="fade-right">
                         <div class="image-frame w-56 h-56 mx-auto mb-8">
-                            <img src="sl.jpeg" class="w-full h-full object-cover" alt="Bride">
+                            <img src="sl.jpeg" class="w-full h-full object-cover" alt="Bride" onerror="this.src='https://picsum.photos/seed/bride/300/300'">
                         </div>
                         <h2 class="font-title text-4xl text-white mb-3">Salsabila Indah Suciawati</h2>
                         <p class="text-[#D4AF37] text-sm mb-4 font-body">Putri pertama dari</p>
@@ -590,7 +599,7 @@
                     <!-- Groom -->
                     <div class="glass-dark p-8 rounded-2xl text-center relative group card-hover" data-aos="fade-left">
                         <div class="image-frame w-56 h-56 mx-auto mb-8">
-                            <img src="ry.jpeg" class="w-full h-full object-cover" alt="Groom">
+                            <img src="ry.jpeg" class="w-full h-full object-cover" alt="Groom" onerror="this.src='https://picsum.photos/seed/groom/300/300'">
                         </div>
                         <h2 class="font-title text-4xl text-white mb-3">Riyan Dwi Putra</h2>
                         <p class="text-[#D4AF37] text-sm mb-4 font-body">Putra kedua dari</p>
@@ -672,7 +681,7 @@
                             <h3 class="text-2xl font-bold text-white mb-3">Pernikahan</h3>
                             <span class="text-[#D4AF37] text-base block mb-3">8 Januari 2026</span>
                             <p class="text-gray-300 text-sm leading-relaxed font-body">
-                                Puncak perjalanan cinta kami yang akan dirayakan dengan penuh kebahagiaan dan keberkahan dari Yang Maha Kuasa.
+                                Satu hal yang kami sadari.  Bukan karena bertemu lalu berjodoh, tapi karna berjodohlah kami bertemu. Kami memutuskan untuk mengikrarkan janji suci pernikahan Insya Allah pada 08 Januari 2026. Sebagaimana yang pernah dikatakan oleh Ali bin Abi Thalib : " Apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu "
                             </p>
                         </div>
                     </div>
@@ -749,21 +758,21 @@
                 <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
                     <!-- Gallery Items -->
                     <div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-pointer card-hover" onclick="showModal(this.querySelector('img').src)">
-                        <img src="g4.jpeg" class="w-full transform transition duration-500 group-hover:scale-105" alt="Gallery">
+                        <img src="g4.jpeg" class="w-full transform transition duration-500 group-hover:scale-105" alt="Gallery" onerror="this.src='https://picsum.photos/seed/g1/400/600'">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-4">
                             <i class="fas fa-search-plus text-white text-2xl"></i>
                         </div>
                     </div>
                     
                     <div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-pointer card-hover" onclick="showModal(this.querySelector('img').src)">
-                        <img src="bgt.jpeg" class="w-full transform transition duration-500 group-hover:scale-105" alt="Gallery">
+                        <img src="bgt.jpeg" class="w-full transform transition duration-500 group-hover:scale-105" alt="Gallery" onerror="this.src='https://picsum.photos/seed/g2/400/500'">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-4">
                             <i class="fas fa-search-plus text-white text-2xl"></i>
                         </div>
                     </div>
                     
                     <div class="break-inside-avoid relative group rounded-xl overflow-hidden cursor-pointer card-hover" onclick="showModal(this.querySelector('img').src)">
-                        <img src="g3.jpeg" class="w-full transform transition duration-500 group-hover:scale-105" alt="Gallery">
+                        <img src="g3.jpeg" class="w-full transform transition duration-500 group-hover:scale-105" alt="Gallery" onerror="this.src='https://picsum.photos/seed/g3/400/550'">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-4">
                             <i class="fas fa-search-plus text-white text-2xl"></i>
                         </div>
@@ -772,7 +781,7 @@
             </div>
         </section>
 
-        <!-- SECTION VIDEO KENANGAN (BARU) -->
+        <!-- SECTION VIDEO KENANGAN (FIXED EMBED + LOGIC) -->
         <section class="py-20 bg-[#111111] relative overflow-hidden">
             <!-- Background Decoration -->
             <div class="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-[100px]"></div>
@@ -786,32 +795,27 @@
 
                 <!-- Video Container with Elegant Frame -->
                 <div class="glass-dark p-3 md:p-4 rounded-2xl border border-[#D4AF37]/20" data-aos="zoom-in-up">
-                    <div class="relative aspect-video bg-black rounded-xl overflow-hidden shadow-2xl group">
+                    <div class="video-wrapper">
+                        <!-- EMBED VIDEO SCREENPAL -->
+                        <!-- Menambahkan ID 'video-iframe' untuk manipulasi JS -->
+                        <iframe 
+                            id="video-iframe"
+                            src="https://go.screenpal.com/player/cTltotnYSao?ff=1&title=0" 
+                            title="Wedding Video" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
                         
-                        <!-- Video Element -->
-                        <!-- GANTI 'video-kenangan.mp4' dengan nama file video Anda yang ada di folder lokal -->
-                        <video 
-                            id="wedding-video" 
-                            class="w-full h-full object-cover"
-                            poster="bg1.jpeg" 
-                            controls 
-                            preload="metadata"
-                        >
-                            <source src="video.mp4" type="video/mp4">
-                            Browser Anda tidak mendukung tag video.
-                        </video>
-
                         <!-- Elegant Corner Decorations -->
-                        <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#D4AF37] opacity-50 pointer-events-none"></div>
-                        <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#D4AF37] opacity-50 pointer-events-none"></div>
-                        <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#D4AF37] opacity-50 pointer-events-none"></div>
-                        <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#D4AF37] opacity-50 pointer-events-none"></div>
-                        
+                        <div class="corner-decor top-left"></div>
+                        <div class="corner-decor top-right"></div>
+                        <div class="corner-decor bottom-left"></div>
+                        <div class="corner-decor bottom-right"></div>
                     </div>
                 </div>
                 
                 <p class="text-center text-gray-500 text-sm mt-4 font-serif italic" data-aos="fade-up">
-                    *Klik play untuk melihat video
+                    *Putar video untuk melihat momen kami
                 </p>
             </div>
         </section>
@@ -974,6 +978,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
 
+    <!-- PENTING: Menambahkan type="module" agar Import Firebase berhasil -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getDatabase, ref, push, onValue, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
@@ -993,6 +998,49 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
+
+        // --- VIDEO & MUSIC INTERACTION LOGIC ---
+        
+        const bgMusic = document.getElementById('bg-music');
+        const videoIframe = document.getElementById('video-iframe');
+        const musicIcon = document.getElementById('disc-icon');
+        
+        // Fungsi Matikan Musik
+        function pauseMusic() {
+            bgMusic.pause();
+            if(musicIcon) musicIcon.classList.remove('spin-slow');
+        }
+        
+        // Fungsi Nyala Musik
+        function playMusic() {
+            bgMusic.play().catch(e => console.log("Autoplay prevented"));
+            if(musicIcon) musicIcon.classList.add('spin-slow');
+        }
+
+        // Event Listener pada Iframe
+        // Kita pakai 'blur' dan 'focus' sebagai pendekatan terbaik untuk Iframe eksternal
+        // Saat user masuk ke Iframe (Focus) -> Musik mati biar nggak ganggu video.
+        // Saat user keluar dari Iframe (Blur) -> Musik nyala lagi.
+        
+        videoIframe.addEventListener('focus', () => {
+            console.log("Video area focused - Pausing music");
+            pauseMusic();
+        });
+        
+        videoIframe.addEventListener('blur', () => {
+            console.log("Video area blurred - Resuming music");
+            // Cek dulu apakah user sedang scroll jauh dari video, biar musiknya nggak nyala pas masih di area video
+            const rect = videoIframe.getBoundingClientRect();
+            const isVisible = (rect.top < window.innerHeight && rect.bottom >= 0);
+            
+            if (isVisible) {
+                // Jika masih terlihat, kita biarkan musik mati sebentar
+                // Tapi jika user scroll ke bawah (blur karena scroll), musik nyala
+            } else {
+                // Jika video sudah tidak terlihat di layar, pastikan musik nyala
+                playMusic();
+            }
+        });
 
         // --- PETAL ANIMATION SCRIPT ---
         
@@ -1120,9 +1168,8 @@
                         AOS.refresh();
                     }, 100);
                     
-                    const audio = document.getElementById('bg-music');
-                    audio.volume = 0.5;
-                    audio.play().catch(() => console.log("Autoplay blocked"));
+                    // Play musik saat buka amplop
+                    playMusic();
                     
                     musicBtn.classList.remove('hidden');
                     
@@ -1131,16 +1178,12 @@
             }, 800);
         };
 
-        // Music Toggle
+        // Music Toggle Manual (Tombol Musik Pojok Kanan Bawah)
         window.toggleMusic = () => {
-            const audio = document.getElementById('bg-music');
-            const icon = document.getElementById('disc-icon');
-            if(audio.paused) {
-                audio.play();
-                icon.classList.add('spin-slow');
+            if(bgMusic.paused) {
+                playMusic();
             } else {
-                audio.pause();
-                icon.classList.remove('spin-slow');
+                pauseMusic();
             }
         };
 
