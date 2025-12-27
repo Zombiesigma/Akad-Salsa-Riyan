@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500&family=Dancing+Script:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=EB+Garamond:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="disc-icon" >
+
     <style>
         /* --- CONFIG & VARIABLES --- */
         :root {
@@ -478,7 +479,7 @@
             
             <!-- Header Undangan -->
             <h3 class="text-[#F4E8C1] tracking-[0.6em] uppercase text-xs md:text-sm mb-6 font-light font-body opacity-80" data-aos="fade-down">
-                The Wedding
+                The Wedding Of
             </h3>
             
             <h1 class="font-title text-4xl md:text-6xl text-white mb-8 leading-tight text-center" data-aos="zoom-in">
@@ -561,7 +562,9 @@
 
             <div class="container mx-auto max-w-6xl relative z-10">
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <img src="IMG-20251225-WA0006.jpg" class="h-16 mx-auto mb-8 opacity-90" alt="Bismillah">
+                    <!-- Image bismillah, saya gunakan placeholder karena URL sebelumnya tidak valid -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Basmala.svg" class="h-16 mx-auto mb-8 opacity-90 invert" alt="Bismillah" style="filter: invert(1) sepia(1) saturate(2) hue-rotate(310deg);">
+                    
                     <p class="font-serif italic text-gray-300 max-w-2xl mx-auto leading-relaxed text-lg">
                         "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."
                     </p>
@@ -669,7 +672,7 @@
                             <h3 class="text-2xl font-bold text-white mb-3">Pernikahan</h3>
                             <span class="text-[#D4AF37] text-base block mb-3">8 Januari 2026</span>
                             <p class="text-gray-300 text-sm leading-relaxed font-body">
-                                Satu hal yang kami sadari.  Bukan karena bertemu lalu berjodoh, tapi karna berjodohlah kami bertemu. Kami memutuskan untuk mengikrarkan janji suci pernikahan Insya Allah pada 08 Januari 2026. Sebagaimana yang pernah dikatakan oleh Ali bin Abi Thalib : " Apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu ".
+                                Puncak perjalanan cinta kami yang akan dirayakan dengan penuh kebahagiaan dan keberkahan dari Yang Maha Kuasa.
                             </p>
                         </div>
                     </div>
@@ -768,6 +771,51 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECTION VIDEO KENANGAN (BARU) -->
+        <section class="py-20 bg-[#111111] relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-[100px]"></div>
+
+            <div class="container mx-auto px-6 max-w-4xl relative z-10">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="font-luxury text-5xl text-[#D4AF37] mb-4">Video Kenangan</h2>
+                    <p class="text-gray-400 font-body text-lg">Sepenggal momen indah dalam perjalanan cinta kami</p>
+                </div>
+
+                <!-- Video Container with Elegant Frame -->
+                <div class="glass-dark p-3 md:p-4 rounded-2xl border border-[#D4AF37]/20" data-aos="zoom-in-up">
+                    <div class="relative aspect-video bg-black rounded-xl overflow-hidden shadow-2xl group">
+                        
+                        <!-- Video Element -->
+                        <!-- GANTI 'video-kenangan.mp4' dengan nama file video Anda yang ada di folder lokal -->
+                        <video 
+                            id="wedding-video" 
+                            class="w-full h-full object-cover"
+                            poster="bg1.jpeg" 
+                            controls 
+                            preload="metadata"
+                        >
+                            <source src="video.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag video.
+                        </video>
+
+                        <!-- Elegant Corner Decorations -->
+                        <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#D4AF37] opacity-50 pointer-events-none"></div>
+                        <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#D4AF37] opacity-50 pointer-events-none"></div>
+                        <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#D4AF37] opacity-50 pointer-events-none"></div>
+                        <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#D4AF37] opacity-50 pointer-events-none"></div>
+                        
+                    </div>
+                </div>
+                
+                <p class="text-center text-gray-500 text-sm mt-4 font-serif italic" data-aos="fade-up">
+                    *Klik play untuk melihat video
+                </p>
+            </div>
+        </section>
+        <!-- END SECTION VIDEO -->
 
         <!-- Gift & RSVP -->
         <section class="py-20 px-6 bg-[#111111] relative">
@@ -1281,7 +1329,3 @@
     </script>
 </body>
 </html>
-
-
-
-
